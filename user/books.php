@@ -115,14 +115,14 @@ include __DIR__ . '/../includes/header.php';
                         <td><?php echo e($b['isbn']); ?></td>
                         <td>
                             <?php if ($b['available_copies'] > 0): ?>
-                                <span class="badge badge-success"><?php echo (int)$b['available_copies']; ?> / <?php echo (int)$b['total_copies']; ?></span>
+                                <span class="badge badge-success"><?php echo (int)$b['available_copies']; ?></span>
                             <?php else: ?>
                                 <span class="badge badge-danger">Out of stock</span>
                             <?php endif; ?>
                         </td>
                         <td>
                             <?php if ($b['available_copies'] > 0): ?>
-                                <form method="post" style="margin:0;" onsubmit="return confirm('Borrow this book? You have 7 days to return it.');">
+                                <form method="post" style="margin:0;">
                                     <input type="hidden" name="borrow_book_id" value="<?php echo (int)$b['id']; ?>">
                                     <button class="btn btn-sm btn-success" type="submit">Borrow</button>
                                 </form>

@@ -187,7 +187,7 @@ include __DIR__ . '/../includes/header.php';
                             <td><?php echo e($b['author']); ?></td>
                             <td><?php echo e($b['category']); ?></td>
                             <td><?php echo e($b['isbn']); ?></td>
-                            <td><?php echo (int)$b['available_copies']; ?> / <?php echo (int)$b['total_copies']; ?></td>
+                            <td><?php echo (int)$b['available_copies']; ?></td>
                             <td>
                                 <a class="btn btn-sm btn-gold" href="books.php?action=edit&id=<?php echo (int)$b['id']; ?>">Edit</a>
                                 <form method="post" style="display:inline;" onsubmit="return confirm('Delete this book? This cannot be undone.');">

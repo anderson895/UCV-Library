@@ -99,14 +99,6 @@ include __DIR__ . '/../includes/header.php';
                         <td><?php echo e(date('Y-m-d', strtotime($u['created_at']))); ?></td>
                         <td>
                             <?php if ((int)$u['id'] !== (int)$_SESSION['user_id']): ?>
-                                <form method="post" style="display:inline;">
-                                    <input type="hidden" name="form_action" value="role">
-                                    <input type="hidden" name="id" value="<?php echo (int)$u['id']; ?>">
-                                    <input type="hidden" name="role" value="<?php echo $u['role'] === 'admin' ? 'user' : 'admin'; ?>">
-                                    <button class="btn btn-sm btn-outline" type="submit">
-                                        Make <?php echo $u['role'] === 'admin' ? 'User' : 'Admin'; ?>
-                                    </button>
-                                </form>
                                 <form method="post" style="display:inline;" onsubmit="return confirm('Delete this user? Their borrow history will also be removed.');">
                                     <input type="hidden" name="form_action" value="delete">
                                     <input type="hidden" name="id" value="<?php echo (int)$u['id']; ?>">
